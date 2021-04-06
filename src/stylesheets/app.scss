@@ -1,0 +1,15 @@
+@import "reset";
+@import "colors";
+@import "navbar";
+@import "main_video";
+@import "info_section";
+
+body {
+  position: relative;
+  color: $white;
+}
+
+.header {
+  color: $yellow;
+  font-family: 'Ribeye Marrow', cursive;
+}

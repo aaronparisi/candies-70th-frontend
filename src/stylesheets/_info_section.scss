@@ -1,0 +1,57 @@
+@import "colors";
+
+.info-section {
+  background-color: black;
+  margin-top: 1000px;
+  border-top: 3px solid $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    font-family: 'Arbutus Slab', serif;
+  }
+}
+
+#info-header {
+  font-size: 48px;
+  margin-top: 20px;
+}
+
+.tagline {
+  margin-top: 20px;
+  font-size: 20px;
+  color: $white;
+  padding: 0px 75px;
+}
+
+.logistics {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0px;
+  color: $yellow;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 500px;
+}
+
+.info-header {
+  font-family: 'Dosis', sans-serif;
+}
+
+.info-content {
+  width: 100%;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+#where-content {
+  border-left: 1px solid $yellow;
+  padding: 0px 50px;
+}
