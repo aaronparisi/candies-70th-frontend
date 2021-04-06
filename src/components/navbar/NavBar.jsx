@@ -6,8 +6,6 @@ const NavBar = props => {
   const [darkNav, setDarkNav] = useState(false)
   const [visible, setVisible] = useState(true);
 
-  let isScrolling;
-
   const navBarStyles = {
     position: 'fixed',
     left: '0px',
@@ -22,40 +20,46 @@ const NavBar = props => {
     boxShadow: darkNav ? '0px 1px 10px #CBA841' : 'none'
   }
 
-  const adjustState = () => {
-    const curScrollPos = window.pageYOffset
-
-    setVisible(  // scrolling UP or at top
-      (prevScrollPos > curScrollPos) ||
-      curScrollPos < 10
-    )
-
-    if (prevScrollPos < curScrollPos) {  // scrolling down => nav will hide
-      // wait before adjusting background
-      setTimeout(() => {
-        setDarkNav(curScrollPos >= 1070)
-      }, 500);
-    } else {  // scrolling up => nav will be shown
-      // set dark nav right away
-      setDarkNav(curScrollPos >= 1070)
+  useEffect(() => {
+    let isScrolling;
+    
+    const handleScroll = e => {
+      window.clearTimeout(isScrolling)
+  
+      isScrolling = setTimeout(() => {
+        console.log('scrolling has stopped')
+        adjustState();
+      }, 200);
     }
 
-    setPrevScrollPos(curScrollPos)
-  }
+    const adjustState = () => {
+      console.log('adjusting state')
+      const curScrollPos = window.pageYOffset
+  
+      setVisible(  // scrolling UP or at top
+        (prevScrollPos > curScrollPos) ||
+        curScrollPos < 10
+      )
+  
+      if (prevScrollPos < curScrollPos) {  // scrolling down => nav will hide
+        // wait before adjusting background
+        setTimeout(() => {
+          console.log('waited')
+          setDarkNav(curScrollPos >= 1070)
+        }, 500);
+      } else {  // scrolling up => nav will be shown
+        // set dark nav right away
+        console.log('did not wait')
+        setDarkNav(curScrollPos >= 1070)
+      }
+  
+      setPrevScrollPos(curScrollPos)
+    }
 
-  const handleScroll = e => {
-    window.clearTimeout(isScrolling)
-
-    isScrolling = setTimeout(() => {
-      adjustState();
-    }, 200);
-  }
-
-  useEffect(() => {
     window.addEventListener('scroll', e => handleScroll(e))
 
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [prevScrollPos, visible, handleScroll])
+  }, [prevScrollPos, visible])
 
   return (
     <div 
