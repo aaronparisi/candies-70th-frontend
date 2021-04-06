@@ -86,7 +86,8 @@ button, input {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 20px 0px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   color: #CBA841; }
 
 .info-container {
@@ -96,8 +97,9 @@ button, input {
   text-align: center;
   width: 500px; }
 
-.info-header {
-  font-family: 'Dosis', sans-serif; }
+.info-header, .rsvp-text {
+  font-family: 'Dosis', sans-serif;
+  color: #CBA841; }
 
 .info-content {
   width: 100%;
@@ -107,6 +109,20 @@ button, input {
 #where-content {
   border-left: 1px solid #CBA841;
   padding: 0px 50px; }
+
+.rsvp-link-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.rsvp-link-info button {
+  font-family: 'Dosis', sans-serif;
+  background-color: #ffffff;
+  font-size: 30px;
+  padding: 10px 50px;
+  color: #999997;
+  margin-top: 30px;
+  margin-bottom: 75px; }
 
 body {
   position: relative;

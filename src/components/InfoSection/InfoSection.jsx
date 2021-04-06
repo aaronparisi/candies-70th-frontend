@@ -25,9 +25,9 @@ const InfoSection = props => {
       </div>
 
       <div className="rsvp-link-info">
-        <p>Find Parking, Details, and RSVP below!!</p>
+        <h2 className="rsvp-text">Find Parking, Details, and RSVP below!!</h2>
 
-        <button>Click Here</button>
+        <button>CLICK HERE</button>
       </div>
     </div>
   )

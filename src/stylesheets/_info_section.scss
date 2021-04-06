@@ -29,7 +29,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 20px 0px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   color: $yellow;
 }
 
@@ -41,8 +42,9 @@
   width: 500px;
 }
 
-.info-header {
+.info-header, .rsvp-text {
   font-family: 'Dosis', sans-serif;
+  color: $yellow;
 }
 
 .info-content {
@@ -54,4 +56,20 @@
 #where-content {
   border-left: 1px solid $yellow;
   padding: 0px 50px;
+}
+
+.rsvp-link-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rsvp-link-info button {
+  font-family: 'Dosis', sans-serif;
+  background-color: $white;
+  font-size: 30px;
+  padding: 10px 50px;
+  color: $gray;
+  margin-top: 30px;
+  margin-bottom: 75px;
 }
