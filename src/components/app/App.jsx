@@ -7,6 +7,7 @@ import NavBarContainer from '../navbar/NavBarContainer'
 import MainVideo from '../MainVideo/MainVideo'
 import InfoSection from '../InfoSection/InfoSection';
 import HowToSection from '../HowTo/HowTo'
+import QuestionForm from '../QuestionForm/QuestionForm'
 // import { AuthRoute, ManagerBoolRoute, ProtectedRoute, ThisLoggedInBoolRoute } from '../../utils/route_util'
 
 function App() {
@@ -17,39 +18,7 @@ function App() {
         <Route exact path="/" component={MainVideo} />
         <Route exact path="/" component={InfoSection} />
         <Route exact path="/" component={HowToSection} />
-        {/* <Route path="/" component={QuestionForm} /> */}
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
+        <Route path="/" component={QuestionForm} />
       </div>
     </ParallaxProvider>
   );

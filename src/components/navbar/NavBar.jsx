@@ -1,38 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { debounce } from '../../utils/helpers'
 
 const NavBar = props => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
-  const [darkNav, setDarkNav] = useState('false')
+  const [darkNav, setDarkNav] = useState(false)
   const [visible, setVisible] = useState(true);
+
+  let isScrolling;
 
   const navBarStyles = {
     position: 'fixed',
-    top: '25px',
     left: '0px',
     height: '75px',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
     zIndex: '9999',
-    transition: 'top 0.3s'
+    transition: 'top 0.3s',
+    top: visible ? '0px' : '-100px',
+    backgroundColor: darkNav ? 'black' : 'transparent',
+    boxShadow: darkNav ? '0px 1px 10px #CBA841' : 'none'
   }
 
-  const handleScroll = debounce(() => {
+  const adjustState = () => {
     const curScrollPos = window.pageYOffset
 
-    setVisible(
-      ((prevScrollPos > curScrollPos)) ||
+    setVisible(  // scrolling UP or at top
+      (prevScrollPos > curScrollPos) ||
       curScrollPos < 10
     )
 
-    setDarkNav(
-      curScrollPos >= 1070
-    )
+    if (prevScrollPos < curScrollPos) {  // scrolling down => nav will hide
+      // wait before adjusting background
+      setTimeout(() => {
+        setDarkNav(curScrollPos >= 1070)
+      }, 500);
+    } else {  // scrolling up => nav will be shown
+      // set dark nav right away
+      setDarkNav(curScrollPos >= 1070)
+    }
 
     setPrevScrollPos(curScrollPos)
-  }, 100)
+  }
+
+  const handleScroll = e => {
+    window.clearTimeout(isScrolling)
+
+    isScrolling = setTimeout(() => {
+      adjustState();
+    }, 200);
+  }
 
   useEffect(() => {
     window.addEventListener('scroll', e => handleScroll(e))
@@ -44,11 +61,7 @@ const NavBar = props => {
     <div 
       className="nav-bar-container"
       style={
-        { ...navBarStyles, 
-          top: visible ? '0px' : '-100px',
-          backgroundColor: darkNav ? 'black' : 'transparent',
-          boxShadow: darkNav ? '0px 1px 10px #CBA841' : 'none'
-        }
+        { ...navBarStyles }
       }
     >      
       <div
@@ -72,3 +85,8 @@ const NavBar = props => {
 }
 
 export default withRouter(NavBar)
+
+// todos
+// - color change is jumpy
+// - maybe take the nav bar out of the container?
+// - do paralax

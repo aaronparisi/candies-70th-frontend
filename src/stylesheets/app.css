@@ -151,6 +151,58 @@ button, input {
   .videos div:first-child {
     margin-right: 15px; }
 
+.question-form {
+  background: url("../images/dots.jpg");
+  font-family: 'Dosis', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #999997;
+  padding-top: 50px;
+  padding-bottom: 50px; }
+  .question-form form {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    background-color: #ffffff; }
+    .question-form form .row-one {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      width: 100%; }
+      .question-form form .row-one input:first-child {
+        margin-right: 15px; }
+    .question-form form input, .question-form form textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #999997;
+      margin-bottom: 20px;
+      font-family: 'Dosis', sans-serif;
+      font-size: 20px;
+      padding: 15px 15px; }
+      .question-form form input::placeholder, .question-form form textarea::placeholder {
+        color: #c5c5c5; }
+    .question-form form textarea {
+      height: 100px; }
+    .question-form form .hovered-input {
+      cursor: text;
+      background-color: #E8E6E6; }
+    .question-form form .selected-input {
+      outline: none;
+      background-color: #FDEDED; }
+    .question-form form input[type="submit"] {
+      background-color: #F2C38F;
+      border: none;
+      box-shadow: none;
+      font-family: 'Dosis', sans-serif;
+      font-size: 24px;
+      padding: 10px 50px;
+      margin-top: 20px; }
+
 body {
   position: relative;
   color: #ffffff; }

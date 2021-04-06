@@ -1,0 +1,73 @@
+@import "colors";
+
+.question-form {
+  background: url('../images/dots.jpg');
+  font-family: 'Dosis', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $gray;
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  form {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    background-color: $white;
+    
+    .row-one {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      width: 100%;
+
+      input:first-child {
+        margin-right: 15px;
+      }
+    }
+
+    input, textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid $gray;
+      margin-bottom: 20px;
+      font-family: 'Dosis', sans-serif;
+      font-size: 20px;
+      padding: 15px 15px;
+
+      &::placeholder {
+        color: $med-gray;
+      }
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    .hovered-input {
+      cursor: text;
+      background-color: $light-gray;
+    }
+
+    .selected-input {
+      outline: none;
+      background-color: $light-orange;
+    }
+
+    input[type="submit"] {
+      background-color: $orange;
+      border: none;
+      box-shadow: none;
+      font-family: 'Dosis', sans-serif;
+      font-size: 24px;
+      padding: 10px 50px;
+      margin-top: 20px;
+    }
+  }
+}
