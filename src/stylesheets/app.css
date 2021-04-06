@@ -54,6 +54,9 @@ button, input {
 .nav-link:hover {
   color: #CBA841; }
 
+#selected-nav-link a {
+  color: #CBA841; }
+
 #main-video {
   position: fixed;
   top: 0px;

@@ -22,7 +22,7 @@ const NavBar = props => {
 
   useEffect(() => {
     let isScrolling;
-    
+
     const handleScroll = e => {
       window.clearTimeout(isScrolling)
   
@@ -60,7 +60,7 @@ const NavBar = props => {
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [prevScrollPos, visible])
-
+  
   return (
     <div 
       className="nav-bar-container"
@@ -71,17 +71,29 @@ const NavBar = props => {
       <div
         className="nav-bar"
       >
-        <div className="nav-link-container">
-          <Link className="nav-link" to="#" >HOME</Link>
+        <div 
+          className="nav-link-container"
+          id={ props.location.pathname === "/" ? "selected-nav-link" : ""}
+        >
+          <Link className="nav-link" to="/" >HOME</Link>
         </div>
-        <div className="nav-link-container">
-          <Link className="nav-link" to="#" >HAIR &amp; OUTFIT INSPO</Link>
+        <div 
+          className="nav-link-container"
+          id={ props.location.pathname === "/inspo" ? "selected-nav-link" : ""}
+        >
+          <Link className="nav-link" to="/inspo" >HAIR &amp; OUTFIT INSPO</Link>
         </div>
-        <div className="nav-link-container">
-          <Link className="nav-link" to="#" >PARKING</Link>
+        <div 
+          className="nav-link-container"
+          id={ props.location.pathname === "/parking" ? "selected-nav-link" : ""}
+        >
+          <Link className="nav-link" to="/parking" >PARKING</Link>
         </div>
-        <div className="nav-link-container">
-          <Link className="nav-link" to="#" >RSVP</Link>
+        <div 
+          className="nav-link-container"
+          id={ props.location.pathname === "/rsvp" ? "selected-nav-link" : ""}
+        >
+          <Link className="nav-link" to="/rsvp" >RSVP</Link>
         </div>
       </div>
     </div>
