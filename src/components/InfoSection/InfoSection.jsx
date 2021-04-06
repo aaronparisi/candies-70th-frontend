@@ -18,8 +18,8 @@ const InfoSection = props => {
         <div className="info-container" id="where-container">
           <h2 className="info-header">When</h2>
           <div className="info-content" id="where-content">
-            <p>Jones House (see parking info below!)</p>
-            <p>29360 Gandolf Ct, Murrieta, CA 92563, USA</p>
+            <p>Candie's House (see parking info below!)</p>
+            <p>123 Fake Street, Unreal, CA 90210, USA</p>
           </div>
         </div>
       </div>

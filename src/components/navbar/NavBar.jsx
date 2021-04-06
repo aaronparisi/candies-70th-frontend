@@ -4,13 +4,14 @@ import { debounce } from '../../utils/helpers'
 
 const NavBar = props => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const [darkNav, setDarkNav] = useState('false')
   const [visible, setVisible] = useState(true);
 
   const navBarStyles = {
     position: 'fixed',
     top: '25px',
     left: '0px',
-    height: '50px',
+    height: '75px',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
@@ -22,8 +23,12 @@ const NavBar = props => {
     const curScrollPos = window.pageYOffset
 
     setVisible(
-      ((prevScrollPos > curScrollPos) && prevScrollPos - curScrollPos > 70) ||
+      ((prevScrollPos > curScrollPos)) ||
       curScrollPos < 10
+    )
+
+    setDarkNav(
+      curScrollPos >= 1070
     )
 
     setPrevScrollPos(curScrollPos)
@@ -37,20 +42,30 @@ const NavBar = props => {
 
   return (
     <div 
-      className="nav-bar" 
-      style={{ ...navBarStyles, top: visible ? '25px' : '-50px' }}
-    >
-      <div className="nav-link-container">
-        <Link className="nav-link" to="#" >HOME</Link>
-      </div>
-      <div className="nav-link-container">
-        <Link className="nav-link" to="#" >HAIR &amp; OUTFIT INSPO</Link>
-      </div>
-      <div className="nav-link-container">
-        <Link className="nav-link" to="#" >PARKING</Link>
-      </div>
-      <div className="nav-link-container">
-        <Link className="nav-link" to="#" >RSVP</Link>
+      className="nav-bar-container"
+      style={
+        { ...navBarStyles, 
+          top: visible ? '0px' : '-100px',
+          backgroundColor: darkNav ? 'black' : 'transparent',
+          boxShadow: darkNav ? '0px 1px 10px #CBA841' : 'none'
+        }
+      }
+    >      
+      <div
+        className="nav-bar"
+      >
+        <div className="nav-link-container">
+          <Link className="nav-link" to="#" >HOME</Link>
+        </div>
+        <div className="nav-link-container">
+          <Link className="nav-link" to="#" >HAIR &amp; OUTFIT INSPO</Link>
+        </div>
+        <div className="nav-link-container">
+          <Link className="nav-link" to="#" >PARKING</Link>
+        </div>
+        <div className="nav-link-container">
+          <Link className="nav-link" to="#" >RSVP</Link>
+        </div>
       </div>
     </div>
   )
