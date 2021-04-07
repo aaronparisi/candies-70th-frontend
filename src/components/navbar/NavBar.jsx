@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { debounce } from '../../utils/helpers';
 
 const NavBar = props => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -23,17 +24,16 @@ const NavBar = props => {
   useEffect(() => {
     let isScrolling;
 
-    const handleScroll = e => {
+    const handleScroll = debounce(() => {
       window.clearTimeout(isScrolling)
-  
+      console.log('handling scroll event')
       isScrolling = setTimeout(() => {
-        console.log('scrolling has stopped')
+        console.log('scroll has stopped, adjusting state')
         adjustState();
-      }, 200);
-    }
+      }, 250);
+    }, 250)
 
     const adjustState = () => {
-      console.log('adjusting state')
       const curScrollPos = window.pageYOffset
   
       setVisible(  // scrolling UP or at top
@@ -41,22 +41,20 @@ const NavBar = props => {
         curScrollPos < 10
       )
   
-      if (prevScrollPos < curScrollPos) {  // scrolling down => nav will hide
-        // wait before adjusting background
+      if (prevScrollPos < curScrollPos) {
+        // scrolling down => nav will hide => wait before adjusting background
         setTimeout(() => {
-          console.log('waited')
           setDarkNav(curScrollPos >= 1070)
         }, 500);
-      } else {  // scrolling up => nav will be shown
-        // set dark nav right away
-        console.log('did not wait')
+      } else {
+        // scrolling up => nav will show => set dark nav right away
         setDarkNav(curScrollPos >= 1070)
       }
   
       setPrevScrollPos(curScrollPos)
     }
 
-    window.addEventListener('scroll', e => handleScroll(e))
+    window.addEventListener('scroll', handleScroll)
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [prevScrollPos, visible])
