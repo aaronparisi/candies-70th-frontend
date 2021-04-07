@@ -26,11 +26,10 @@ const NavBar = props => {
 
     const handleScroll = debounce(() => {
       window.clearTimeout(isScrolling)
-      console.log('handling scroll event')
+
       isScrolling = setTimeout(() => {
-        console.log('scroll has stopped, adjusting state')
         adjustState();
-      }, 250);
+      }, 100);
     }, 250)
 
     const adjustState = () => {

@@ -206,6 +206,9 @@ button, input {
       padding: 10px 50px;
       margin-top: 20px; }
 
+.parallax-balloons {
+  width: 100%; }
+
 body {
   position: relative;
   color: #ffffff; }
