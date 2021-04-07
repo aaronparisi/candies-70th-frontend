@@ -14,7 +14,7 @@ const NavBar = props => {
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
-    zIndex: '9999',
+    zIndex: '2',
     transition: 'top 0.3s',
     top: visible ? '0px' : '-100px',
     backgroundColor: darkNav ? 'black' : 'transparent',

@@ -209,6 +209,45 @@ button, input {
 .parallax-balloons {
   width: 100%; }
 
+.rsvp-container {
+  width: 100%;
+  height: 100%; }
+  .rsvp-container .rsvp-overlay {
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px; }
+  .rsvp-container .close-rsvp-button {
+    background-color: #ffffff;
+    border: 2px solid palevioletred;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    z-index: 4; }
+  .rsvp-container .rsvp-form-container {
+    z-index: 4;
+    position: fixed;
+    top: 200px;
+    left: 500px;
+    border: 2px solid lime;
+    background-color: #ffffff; }
+    .rsvp-container .rsvp-form-container form {
+      display: flex;
+      flex-direction: column; }
+      .rsvp-container .rsvp-form-container form input, .rsvp-container .rsvp-form-container form label {
+        color: #999997; }
+      .rsvp-container .rsvp-form-container form input[type="submit"] {
+        background-color: #F2C38F;
+        border: none;
+        box-shadow: none;
+        font-family: 'Dosis', sans-serif;
+        font-size: 24px;
+        padding: 10px 50px;
+        margin-top: 20px; }
+
 body {
   position: relative;
   color: #ffffff; }
