@@ -209,44 +209,98 @@ button, input {
 .parallax-balloons {
   width: 100%; }
 
-.rsvp-container {
+.rsvp-content {
   width: 100%;
-  height: 100%; }
-  .rsvp-container .rsvp-overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .rsvp-content .rsvp-overlay {
     z-index: 3;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0px;
     left: 0px; }
-  .rsvp-container .close-rsvp-button {
+  .rsvp-content .close-rsvp-button {
     background-color: #ffffff;
-    border: 2px solid palevioletred;
+    border: 1px solid #CBA841;
+    border-radius: 12px;
+    padding: 4px 7px;
     position: fixed;
     top: 50px;
     right: 50px;
     z-index: 4; }
-  .rsvp-container .rsvp-form-container {
-    z-index: 4;
+    .rsvp-content .close-rsvp-button:hover {
+      cursor: pointer;
+      background-color: #E8E6E6; }
+  .rsvp-content .rsvp-form-height-wrapper {
     position: fixed;
-    top: 200px;
-    left: 500px;
-    border: 2px solid lime;
-    background-color: #ffffff; }
-    .rsvp-container .rsvp-form-container form {
-      display: flex;
-      flex-direction: column; }
-      .rsvp-container .rsvp-form-container form input, .rsvp-container .rsvp-form-container form label {
-        color: #999997; }
-      .rsvp-container .rsvp-form-container form input[type="submit"] {
-        background-color: #F2C38F;
-        border: none;
-        box-shadow: none;
+    top: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 4; }
+    .rsvp-content .rsvp-form-height-wrapper .rsvp-form {
+      margin-top: 10px;
+      width: 50%;
+      border: 1px solid #CBA841;
+      box-shadow: 0px 0px 100px #CBA841;
+      background-color: #ffffff; }
+      .rsvp-content .rsvp-form-height-wrapper .rsvp-form .party-details {
+        color: #999997;
+        font-family: 'Dosis', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0px;
+        border-bottom: 1px solid #E8E6E6; }
+        .rsvp-content .rsvp-form-height-wrapper .rsvp-form .party-details h2 {
+          margin-bottom: 5px; }
+      .rsvp-content .rsvp-form-height-wrapper .rsvp-form form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         font-family: 'Dosis', sans-serif;
         font-size: 24px;
-        padding: 10px 50px;
-        margin-top: 20px; }
+        padding: 20px 40px; }
+        .rsvp-content .rsvp-form-height-wrapper .rsvp-form form .going {
+          display: flex;
+          justify-content: center; }
+          .rsvp-content .rsvp-form-height-wrapper .rsvp-form form .going .going-option:first-child {
+            margin-right: 20px; }
+          .rsvp-content .rsvp-form-height-wrapper .rsvp-form form .going .going-option input {
+            margin-right: 5px; }
+        .rsvp-content .rsvp-form-height-wrapper .rsvp-form form input, .rsvp-content .rsvp-form-height-wrapper .rsvp-form form label {
+          color: #999997;
+          font-family: 'Dosis', sans-serif;
+          padding: 5px 5px;
+          font-size: 24px; }
+        .rsvp-content .rsvp-form-height-wrapper .rsvp-form form input[type="text"] {
+          border-bottom: 1px solid #999997;
+          padding: 10px 10px; }
+          .rsvp-content .rsvp-form-height-wrapper .rsvp-form form input[type="text"]:first-child {
+            margin-right: 10px; }
+        .rsvp-content .rsvp-form-height-wrapper .rsvp-form form input[type="submit"] {
+          background-color: #F2C38F;
+          border: none;
+          box-shadow: none;
+          font-family: 'Dosis', sans-serif;
+          font-size: 24px;
+          padding: 10px 50px;
+          margin-top: 20px;
+          width: 50%; }
+          .rsvp-content .rsvp-form-height-wrapper .rsvp-form form input[type="submit"]:hover {
+            cursor: pointer;
+            background-color: #e9ac67; }
+        .rsvp-content .rsvp-form-height-wrapper .rsvp-form form .plus-one-checkbox {
+          margin-top: 20px;
+          display: flex;
+          align-items: center; }
 
 body {
   position: relative;
