@@ -58,7 +58,7 @@ const NavBar = props => {
         // scrolling down => nav will hide => wait before adjusting background
         setTimeout(() => {
           setDarkNav(inFrontOfDark())
-        }, 500);
+        }, 1000);
       } else {
         // scrolling up => nav will show => set dark nav right away
         setDarkNav(inFrontOfDark())
@@ -98,13 +98,13 @@ const NavBar = props => {
         </div>
         <div 
           className="nav-link-container"
-          id={ new RegExp(/(\d+)\/parking/).test(props.location.pathname) ? "selected-nav-link" : ""}
+          id={ new RegExp(/(\d+)\/directions/).test(props.location.pathname) ? "selected-nav-link" : ""}
         >
-          <Link className="nav-link" to={`/${curUser}/parking`} >PARKING</Link>
+          <Link className="nav-link" to={`/${curUser}/directions`} >DIRECTIONS</Link>
         </div>
         <div 
           className="nav-link-container"
-          id={ new RegExp("/(\d+)\/(inspo|parking)?\/rsvp/").test(props.location.pathname) ? "selected-nav-link" : ""}
+          id={ new RegExp("/(\d+)\/(inspo|directions)?\/rsvp/").test(props.location.pathname) ? "selected-nav-link" : ""}
         >
           <Link className="nav-link" to={`${props.location.pathname}/rsvp`} >RSVP</Link>
         </div>

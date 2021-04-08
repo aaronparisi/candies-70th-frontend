@@ -11,6 +11,7 @@ import QuestionForm from '../QuestionForm/QuestionForm'
 import RSVPFormContainer from '../RSVP/RSVPFormContainer'
 import Balloons from '../Balloons/Balloons';
 import InspoContainer from '../Inspo/InspoContainer';
+import Directions from '../Directions/Directions';
 // import { AuthRoute, ManagerBoolRoute, ProtectedRoute, ThisLoggedInBoolRoute } from '../../utils/route_util'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Route exact path="/:user?/([r][s][v][p])?" component={HowToSection} />
       
       <Route exact path="/:user?/inspo/([r][s][v][p])?" component={InspoContainer} />
+      <Route exact path="/:user?/directions/([r][s][v][p])?" component={Directions} />
 
       <Route path="/:user?/([r][s][v][p])?" component={QuestionForm} />
     </React.Fragment>

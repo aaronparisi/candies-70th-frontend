@@ -357,6 +357,44 @@ button, input {
       vertical-align: bottom;
       margin: 5px; }
 
+.directions {
+  background-color: black;
+  font-family: 'Dosis', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  padding-left: 200px;
+  padding-right: 200px;
+  text-align: center; }
+  .directions .header {
+    font-size: 48px;
+    margin-top: 30px;
+    margin-bottom: 30px; }
+  .directions h2 {
+    color: #E8E6E6;
+    font-size: 30px;
+    margin-bottom: 30px; }
+    .directions h2#parking-directive {
+      border: 1px solid #cba841;
+      padding: 10px 20px;
+      font-style: normal;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px #cba841; }
+  .directions p {
+    color: #c5c5c5;
+    font-size: 24px;
+    margin-bottom: 30px; }
+  .directions img {
+    box-shadow: 0px 0px 10px #cba841;
+    margin: 50px 0px; }
+  .directions a {
+    color: #cba841;
+    cursor: pointer; }
+  .directions .map {
+    height: 500px;
+    width: 500px; }
+
 body {
   position: relative;
   color: #ffffff; }
