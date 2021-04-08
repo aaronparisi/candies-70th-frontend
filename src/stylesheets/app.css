@@ -52,10 +52,10 @@ button, input {
   flex-wrap: nowrap; }
 
 .nav-link:hover {
-  color: #CBA841; }
+  color: #cba841; }
 
 #selected-nav-link a {
-  color: #CBA841; }
+  color: #cba841; }
 
 #main-video {
   position: fixed;
@@ -94,7 +94,7 @@ button, input {
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 40px;
-  color: #CBA841; }
+  color: #cba841; }
 
 .info-container {
   display: flex;
@@ -105,7 +105,7 @@ button, input {
 
 .info-header, .rsvp-text {
   font-family: 'Dosis', sans-serif;
-  color: #CBA841; }
+  color: #cba841; }
 
 .info-content {
   width: 100%;
@@ -113,7 +113,7 @@ button, input {
   margin-top: 20px; }
 
 #where-content {
-  border-left: 1px solid #CBA841;
+  border-left: 1px solid #cba841;
   padding: 0px 50px; }
 
 .rsvp-link-info {
@@ -149,7 +149,7 @@ button, input {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  border: 2px solid #CBA841;
+  border: 2px solid #cba841;
   border-radius: 10px; }
   .videos div:first-child {
     margin-right: 15px; }
@@ -228,7 +228,7 @@ button, input {
     left: 0px; }
   .rsvp-content .close-rsvp-button {
     background-color: #ffffff;
-    border: 1px solid #CBA841;
+    border: 1px solid #cba841;
     border-radius: 12px;
     padding: 4px 7px;
     position: fixed;
@@ -248,8 +248,8 @@ button, input {
     .rsvp-content .rsvp-form-height-wrapper .rsvp-form {
       margin-top: 10px;
       width: 50%;
-      border: 1px solid #CBA841;
-      box-shadow: 0px 0px 100px #CBA841;
+      border: 1px solid #cba841;
+      box-shadow: 0px 0px 100px #cba841;
       background-color: #ffffff; }
       .rsvp-content .rsvp-form-height-wrapper .rsvp-form .party-details {
         color: #999997;
@@ -302,12 +302,51 @@ button, input {
           display: flex;
           align-items: center; }
 
+.inspo {
+  background-color: black;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .inspo .sliders {
+    font-family: 'Dosis', sans-serif;
+    font-size: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 50%; }
+    .inspo .sliders .slider {
+      position: relative;
+      width: min-content; }
+      .inspo .sliders .slider:hover {
+        cursor: pointer; }
+      .inspo .sliders .slider .slider-options {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: min-content; }
+        .inspo .sliders .slider .slider-options .slider-option {
+          width: 125px;
+          text-align: center; }
+      .inspo .sliders .slider .slider-cover {
+        position: absolute;
+        top: -10%;
+        background-color: rgba(255, 255, 255, 0.25);
+        box-shadow: 0px 0px 10px #cba841;
+        border-radius: 5px;
+        width: 50%;
+        height: 120%;
+        transition: left .5s; }
+
 body {
   position: relative;
   color: #ffffff; }
 
 .header {
-  color: #CBA841;
+  color: #cba841;
   font-family: 'Ribeye Marrow', cursive; }
 
 /*# sourceMappingURL=app.css.map */

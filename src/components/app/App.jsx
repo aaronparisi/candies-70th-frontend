@@ -28,9 +28,10 @@ function App() {
       </ParallaxLayer> */}
       <Route exact path="/:user?/([r][s][v][p])?" component={InfoSection} />
       <Route exact path="/:user?/([r][s][v][p])?" component={HowToSection} />
-      <Route path="/:user?/([r][s][v][p])?" component={QuestionForm} />
+      
+      <Route exact path="/:user?/inspo/([r][s][v][p])?" component={InspoContainer} />
 
-      <Route exactl path="/:user?/inspo/([r][s][v][p])?" component={InspoContainer} />
+      <Route path="/:user?/([r][s][v][p])?" component={QuestionForm} />
     </div>
   );
 }

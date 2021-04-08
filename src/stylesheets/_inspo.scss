@@ -1,0 +1,52 @@
+.inspo {
+  background-color: black;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .sliders {
+    font-family: 'Dosis', sans-serif;
+    font-size: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 50%;
+
+    .slider {
+      position: relative;
+      width: min-content;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .slider-options {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: min-content;
+
+        .slider-option {
+          width: 125px;
+          text-align: center;
+        }
+      }
+
+      .slider-cover {
+        position: absolute;
+        top: -10%;
+        // background-color: rgba(203, 168, 65, .5);
+        background-color: rgba(255, 255, 255, .25);
+        box-shadow: 0px 0px 10px $yellow;
+        border-radius: 5px;
+        width: 50%;
+        height: 120%;
+        transition: left .5s;
+      }
+    }
+  }
+}
