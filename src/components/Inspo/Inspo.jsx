@@ -1,4 +1,68 @@
 import React, { useState } from 'react'
+import ImageDisplay from './ImageDisplay'
+
+// todo - maybe put photos in s3 bucket?
+import MaleClothing1 from '../../images/maleInspo/clothing/male-clothing-1.png'
+import MaleClothing2 from '../../images/maleInspo/clothing/male-clothing-2.png'
+import MaleClothing3 from '../../images/maleInspo/clothing/male-clothing-3.png'
+import MaleClothing4 from '../../images/maleInspo/clothing/male-clothing-4.png'
+import MaleClothing5 from '../../images/maleInspo/clothing/male-clothing-5.png'
+import MaleClothing6 from '../../images/maleInspo/clothing/male-clothing-6.png'
+import MaleClothing7 from '../../images/maleInspo/clothing/male-clothing-7.png'
+import MaleClothing8 from '../../images/maleInspo/clothing/male-clothing-8.png'
+
+import FemaleClothing1 from '../../images/femaleInspo/clothing/female-clothing-1.png'
+import FemaleClothing2 from '../../images/femaleInspo/clothing/female-clothing-2.png'
+import FemaleClothing3 from '../../images/femaleInspo/clothing/female-clothing-3.png'
+import FemaleClothing4 from '../../images/femaleInspo/clothing/female-clothing-4.png'
+import FemaleClothing5 from '../../images/femaleInspo/clothing/female-clothing-5.png'
+import FemaleClothing6 from '../../images/femaleInspo/clothing/female-clothing-6.png'
+import FemaleClothing7 from '../../images/femaleInspo/clothing/female-clothing-7.png'
+import FemaleClothing8 from '../../images/femaleInspo/clothing/female-clothing-8.png'
+import FemaleClothing9 from '../../images/femaleInspo/clothing/female-clothing-9.png'
+
+import MaleHair1 from '../../images/maleInspo/hair/male-hair-1.png'
+import MaleHair2 from '../../images/maleInspo/hair/male-hair-2.png'
+import MaleHair3 from '../../images/maleInspo/hair/male-hair-3.png'
+
+import FemaleHair1 from '../../images/femaleInspo/hair/female-hair-1.png'
+import FemaleHair2 from '../../images/femaleInspo/hair/female-hair-2.png'
+import FemaleHair3 from '../../images/femaleInspo/hair/female-hair-3.png'
+
+const maleClothing = [
+  MaleClothing1,
+  MaleClothing2,
+  MaleClothing3,
+  MaleClothing4,
+  MaleClothing5,
+  MaleClothing6,
+  MaleClothing7,
+  MaleClothing8
+]
+
+const maleHair = [
+  MaleHair1,
+  MaleHair2,
+  MaleHair3
+]
+
+const femaleClothing = [
+  FemaleClothing1,
+  FemaleClothing2,
+  FemaleClothing3,
+  FemaleClothing4,
+  FemaleClothing5,
+  FemaleClothing6,
+  FemaleClothing7,
+  FemaleClothing8,
+  FemaleClothing9
+]
+
+const femaleHair = [
+  FemaleHair1,
+  FemaleHair2,
+  FemaleHair3
+]
 
 const Inspo = props => {
   const [sex, setSex] = useState('female')
@@ -11,22 +75,22 @@ const Inspo = props => {
     left: (inspoType === 'clothing') ? '0px' : '50%'
   }
 
-  const ImageDisplay = () => {
+  const ImagePicker = () => {
     if (sex === 'male' && inspoType === 'clothing') {
       return (
-        <div className="image-display">Male clothing!</div>
+        <ImageDisplay images={maleClothing} />
       )
     } else if (sex === 'male' && inspoType === 'hair') {
       return (
-        <div className="image-display">Male hair!</div>
+        <ImageDisplay images={maleHair} />
       )
     } else if (sex === 'female' && inspoType === 'clothing') {
       return (
-        <div className="image-display">Female clothing!</div>
+        <ImageDisplay images={femaleClothing} />
       )
     } else {
       return (
-        <div className="image-display">Female hair!</div>
+        <ImageDisplay images={femaleHair} />
       )
     }
   }
@@ -83,7 +147,7 @@ const Inspo = props => {
         </div>
       </div>
 
-      <ImageDisplay />
+      <ImagePicker />
     </div>
   )
 }

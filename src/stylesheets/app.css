@@ -304,6 +304,7 @@ button, input {
 
 .inspo {
   background-color: black;
+  min-height: 100vh;
   padding-top: 100px;
   padding-bottom: 100px;
   display: flex;
@@ -340,6 +341,21 @@ button, input {
         width: 50%;
         height: 120%;
         transition: left .5s; }
+  .inspo .image-display {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 60%;
+    box-shadow: 0px 0px 10px #cba841;
+    border-radius: 10px;
+    padding: 20px; }
+    .inspo .image-display img {
+      max-height: 40vh;
+      max-width: 100%;
+      object-fit: cover;
+      vertical-align: bottom;
+      margin: 5px; }
 
 body {
   position: relative;
