@@ -96,7 +96,10 @@ const Inspo = props => {
   }
 
   return (
-    <div className="inspo">
+    <div 
+      className="inspo"
+      data-dark={true}
+    >
       <h1 className="header" >Hair, Makeup, &amp; Outfit Inspiration!</h1>
 
       <div className="sliders">

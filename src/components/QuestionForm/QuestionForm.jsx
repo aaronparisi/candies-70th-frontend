@@ -7,7 +7,10 @@ const QuestionForm = () => {
   const [message, setMessage] = useState('')
 
   return (
-    <div className="question-form">
+    <div 
+      className="question-form"
+      data-dark={false}
+    >
       <h2>For any questions, please contact Candie @ 123-555-1234</h2>
       <h2>Or, send her a message!</h2>
 

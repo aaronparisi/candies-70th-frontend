@@ -2,9 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { debounce } from '../../utils/helpers';
 
+const inFrontOfDark = () => {
+  const ele = document.elementFromPoint(0,75)
+  
+  if (ele.dataset.dark === undefined) {
+    return false
+  } else {
+    return ele.dataset.dark === "true"
+  }
+}
+
 const NavBar = props => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
-  const [darkNav, setDarkNav] = useState(false)
+  const [darkNav, setDarkNav] = useState(inFrontOfDark())
   const [visible, setVisible] = useState(true);
 
   const navBarStyles = {
@@ -20,6 +30,10 @@ const NavBar = props => {
     backgroundColor: darkNav ? 'black' : 'transparent',
     boxShadow: darkNav ? '0px 1px 10px #CBA841' : 'none'
   }
+
+  useEffect(() => {
+    setDarkNav(inFrontOfDark())
+  })
 
   useEffect(() => {
     let isScrolling;
@@ -39,17 +53,15 @@ const NavBar = props => {
         (prevScrollPos > curScrollPos) ||
         curScrollPos < 10
       )
-  
-      const ele = document.elementFromPoint(0,75)
-      const eleBgColor = window.getComputedStyle(ele).backgroundColor
+
       if (prevScrollPos < curScrollPos) {
         // scrolling down => nav will hide => wait before adjusting background
         setTimeout(() => {
-          setDarkNav(eleBgColor === 'rgb(0, 0, 0)')
+          setDarkNav(inFrontOfDark())
         }, 500);
       } else {
         // scrolling up => nav will show => set dark nav right away
-        setDarkNav(eleBgColor === 'rgb(0, 0, 0)')
+        setDarkNav(inFrontOfDark())
       }
   
       setPrevScrollPos(curScrollPos)

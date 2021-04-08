@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-
+    path: ownProps.loc
   }
 }
 

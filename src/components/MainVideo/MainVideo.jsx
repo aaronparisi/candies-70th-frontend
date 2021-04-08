@@ -5,7 +5,7 @@ import FredAstaire from '../../videos/main-video.mp4'
 const MainVideo = props => {
   
   return (
-    <React.Fragment >
+    <div data-dark={false} >
       <ReactPlayer
         id="main-video"
         width='100%'
@@ -18,7 +18,7 @@ const MainVideo = props => {
       />
 
       <h1 className="header" id="main-header">Candie's Swingin' 70th!</h1>
-    </React.Fragment>
+    </div>
   )
 }
 

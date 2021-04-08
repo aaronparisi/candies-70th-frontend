@@ -4,7 +4,10 @@ import ReactPlayer from 'react-player'
 const HowTo = () => {
 
   return (
-    <div className="how-to">
+    <div 
+      className="how-to"
+      data-dark={true}
+    >
       <h1 className="header">Learn how to swing dance!</h1>
 
       <div className="videos">

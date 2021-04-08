@@ -5,8 +5,8 @@ const ImageDisplay = ({ images }) => {
   return (
     <div className="image-display">
       {
-        images.map(element => {
-          return <img src={element} alt={element} />
+        images.map((element, idx) => {
+          return <img key={idx} src={element} alt={element} />
         })
       }
     </div>

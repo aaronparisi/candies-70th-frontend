@@ -16,8 +16,8 @@ import InspoContainer from '../Inspo/InspoContainer';
 function App() {
   
   return (
-    <div className="main-content">
-      <NavBarContainer />
+    <React.Fragment >
+      <NavBarContainer key={window.location.pathname} loc={window.location.pathname} />
       <Route exact path="/:user?/(inspo|parking)?/rsvp" component={RSVPFormContainer} />
       <Route exact path="/:user?/([r][s][v][p])?" component={MainVideo} />
       {/* <ParallaxLayer 
@@ -32,7 +32,8 @@ function App() {
       <Route exact path="/:user?/inspo/([r][s][v][p])?" component={InspoContainer} />
 
       <Route path="/:user?/([r][s][v][p])?" component={QuestionForm} />
-    </div>
+    </React.Fragment>
+    
   );
 }
 

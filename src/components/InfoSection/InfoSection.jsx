@@ -2,7 +2,10 @@ import React from 'react'
 
 const InfoSection = props => {
   return (
-    <div className="info-section" >
+    <div 
+      className="info-section" 
+      data-dark={true}
+    >
       <h1 className="header" id="info-header">Candie's Swingin' 70th!</h1>
       <p className="tagline">Join us for an unforgettable evening celebrating Candie's life! Dress in your best 40s inspired outfits and come ready to dance the night away.</p>
 
