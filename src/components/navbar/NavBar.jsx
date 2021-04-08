@@ -57,6 +57,8 @@ const NavBar = props => {
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [prevScrollPos, visible])
+
+  const curUser = props.location.pathname.split('/')[1]
   
   return (
     <div 
@@ -70,27 +72,27 @@ const NavBar = props => {
       >
         <div 
           className="nav-link-container"
-          id={ props.location.pathname === "/" ? "selected-nav-link" : ""}
+          id={ new RegExp(/(\d+)$/).test(props.location.pathname) ? "selected-nav-link" : ""}
         >
-          <Link className="nav-link" to="/" >HOME</Link>
+          <Link className="nav-link" to={`/${curUser}`} >HOME</Link>
         </div>
         <div 
           className="nav-link-container"
-          id={ props.location.pathname === "/inspo" ? "selected-nav-link" : ""}
+          id={ new RegExp(/(\d+)\/inspo/).test(props.location.pathname) ? "selected-nav-link" : ""}
         >
-          <Link className="nav-link" to="/inspo" >HAIR &amp; OUTFIT INSPO</Link>
+          <Link className="nav-link" to={`/${curUser}/inspo`} >HAIR &amp; OUTFIT INSPO</Link>
         </div>
         <div 
           className="nav-link-container"
-          id={ props.location.pathname === "/parking" ? "selected-nav-link" : ""}
+          id={ new RegExp(/(\d+)\/parking/).test(props.location.pathname) ? "selected-nav-link" : ""}
         >
-          <Link className="nav-link" to="/parking" >PARKING</Link>
+          <Link className="nav-link" to={`/${curUser}/parking`} >PARKING</Link>
         </div>
         <div 
           className="nav-link-container"
-          id={ props.location.pathname === "/rsvp" ? "selected-nav-link" : ""}
+          id={ new RegExp("/(\d+)\/(inspo|parking)?\/rsvp/").test(props.location.pathname) ? "selected-nav-link" : ""}
         >
-          <Link className="nav-link" to="/rsvp" >RSVP</Link>
+          <Link className="nav-link" to={`${props.location.pathname}/rsvp`} >RSVP</Link>
         </div>
       </div>
     </div>

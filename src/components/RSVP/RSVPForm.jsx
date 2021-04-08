@@ -16,8 +16,10 @@ const RSVPForm = props => {
 
   const handleFormClose = e => {
     e.preventDefault()
+    let newUrl = window.location.pathname.split('/')
+    newUrl.pop();
 
-    history.push('/')
+    history.push(newUrl.join('/'))
   }
 
   const handleSubmit = e => {

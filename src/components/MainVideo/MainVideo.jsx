@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player'
 import FredAstaire from '../../videos/main-video.mp4'
 
 const MainVideo = props => {
-
+  
   return (
     <React.Fragment >
       <ReactPlayer
