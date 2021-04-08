@@ -40,17 +40,16 @@ const NavBar = props => {
         curScrollPos < 10
       )
   
+      const ele = document.elementFromPoint(0,75)
+      const eleBgColor = window.getComputedStyle(ele).backgroundColor
       if (prevScrollPos < curScrollPos) {
         // scrolling down => nav will hide => wait before adjusting background
         setTimeout(() => {
-          // setDarkNav(curScrollPos >= 1070)
-          // setDarkNav(window.getComputedStyle(document.elementFromPoint(0,curScrollPos+75)).backgroundColor === 'rgb(0, 0, 0)')
-          setDarkNav(window.getComputedStyle(document.elementFromPoint(0,0)).backgroundColor === 'rgb(0, 0, 0)')
+          setDarkNav(eleBgColor === 'rgb(0, 0, 0)')
         }, 500);
       } else {
         // scrolling up => nav will show => set dark nav right away
-        // setDarkNav(curScrollPos >= 1070)
-        setDarkNav(window.getComputedStyle(document.elementFromPoint(0,0)).backgroundColor === 'rgb(0, 0, 0)')
+        setDarkNav(eleBgColor === 'rgb(0, 0, 0)')
       }
   
       setPrevScrollPos(curScrollPos)
