@@ -6,6 +6,11 @@ const QuestionForm = () => {
   const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
 
+  const handleSubmit = e => {
+    e.preventDefault()
+    alert("submission!")
+  }
+
   return (
     <div 
       className="question-form"
@@ -14,7 +19,9 @@ const QuestionForm = () => {
       <h2>For any questions, please contact Candie @ 123-555-1234</h2>
       <h2>Or, send her a message!</h2>
 
-      <form>
+      <form
+        onSubmit={e => handleSubmit(e)}
+      >
         <div className="row-one">
           <input 
             type="text" 

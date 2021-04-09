@@ -164,6 +164,7 @@ button, input {
   padding-top: 50px;
   padding-bottom: 50px; }
   .question-form form {
+    z-index: 1;
     margin-top: 30px;
     margin-bottom: 100px;
     display: flex;

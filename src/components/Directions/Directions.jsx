@@ -15,6 +15,11 @@ const Directions = props => {
     width: '500px'
   }
 
+  const mapContainerStyle = {
+    height: '500px',
+    width: '500px'
+  }
+
   const scrollToParking = () => {
     if (parkingInfo.current) {
       parkingInfo.current.scrollIntoView({
@@ -94,6 +99,7 @@ const Directions = props => {
             lng: -120.7060049,
           }}
           style={mapStyle}
+          containerStyle={mapContainerStyle}
         />
       </div>
     </div>
