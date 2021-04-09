@@ -206,6 +206,9 @@ button, input {
       font-size: 24px;
       padding: 10px 50px;
       margin-top: 20px; }
+      .question-form form input[type="submit"]:hover {
+        cursor: pointer;
+        background-color: #e9ac67; }
 
 .parallax-balloons {
   width: 100%; }

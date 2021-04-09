@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { history } from '../..'
 
 const QuestionForm = () => {
   const [name, setName] = useState('')
@@ -8,7 +9,12 @@ const QuestionForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    alert("submission!")
+    alert("Your question has been ~pretend~ submitted!  We won't ever get back to you.")
+    let newUrl = window.location.pathname.split('/')
+    newUrl.pop();
+
+    history.push(newUrl.join('/'))
+    // ! this should be abstracted somehow
   }
 
   return (

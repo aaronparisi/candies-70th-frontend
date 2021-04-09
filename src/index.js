@@ -8,6 +8,7 @@ import { createBrowserHistory } from 'history'
 
 // const axios = require('axios').default
 import axios from 'axios'
+import ScrollToTop from './components/Scroll/ScrollToTop';
 
 const baseUrl = (process.env.NODE_ENV === 'production') ? '' : 'http://localhost:3000'  // ! update for production
 export const axiosIns =  axios.create({
@@ -22,7 +23,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router history={history}>
-        <AppContainer />
+        <ScrollToTop >
+          <AppContainer />
+        </ScrollToTop>
       </Router>
     </Provider>
   </React.StrictMode>,
