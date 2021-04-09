@@ -385,7 +385,7 @@ button, input {
     color: #c5c5c5;
     font-size: 24px;
     margin-bottom: 30px; }
-  .directions img {
+  .directions #little-candie {
     box-shadow: 0px 0px 10px #cba841;
     margin: 50px 0px; }
   .directions a {
@@ -394,6 +394,15 @@ button, input {
   .directions .map {
     height: 500px;
     width: 500px; }
+  .directions #parking-directive:hover {
+    cursor: pointer;
+    background-color: #292929; }
+  .directions .parking-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .directions .parking-info-header img {
+      margin: 0px 10px; }
 
 body {
   position: relative;

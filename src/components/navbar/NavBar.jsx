@@ -33,7 +33,7 @@ const NavBar = props => {
 
   useEffect(() => {
     setDarkNav(inFrontOfDark())
-  })
+  }, [])
 
   useEffect(() => {
     let isScrolling;
@@ -104,7 +104,7 @@ const NavBar = props => {
         </div>
         <div 
           className="nav-link-container"
-          id={ new RegExp("/(\d+)\/(inspo|directions)?\/rsvp/").test(props.location.pathname) ? "selected-nav-link" : ""}
+          id={ new RegExp("/(\d+)/(inspo|directions)?/rsvp/").test(props.location.pathname) ? "selected-nav-link" : ""}
         >
           <Link className="nav-link" to={`${props.location.pathname}/rsvp`} >RSVP</Link>
         </div>

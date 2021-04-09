@@ -39,7 +39,7 @@
     margin-bottom: 30px;
   }
 
-  img {
+  #little-candie {
     box-shadow: 0px 0px 10px $yellow;
     margin: 50px 0px;
   }
@@ -52,5 +52,22 @@
   .map {
     height: 500px;
     width: 500px;
+  }
+
+  #parking-directive {
+    &:hover {
+      cursor: pointer;
+      background-color: $dark-gray;
+    }
+  }
+
+  .parking-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      margin: 0px 10px;
+    }
   }
 }

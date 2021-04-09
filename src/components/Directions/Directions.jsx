@@ -2,20 +2,38 @@ import React from 'react'
 import { Link, withRouter } from 'react-router-dom';
 import LittleCandie from '../../images/little-candie.png'
 
-import { Map, Marker, GoogleApiWrapper } from 'google-maps-react'
+import { Map, GoogleApiWrapper } from 'google-maps-react'
+
+import Warning from '../../images/icons/warning.png'
 
 const Directions = props => {
   const curUser = props.location.pathname.split('/')[1]
+  const parkingInfo = React.createRef()
 
   const mapStyle = {
     height: '500px',
     width: '500px'
   }
 
+  const scrollToParking = () => {
+    if (parkingInfo.current) {
+      parkingInfo.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      })
+    }
+  }
+
   return (
     <div className="directions" data-dark={true} >
       <h2>Saturday, October 2, 2021 @ 5pm PDT</h2>
-      <h2 id="parking-directive">*** See parking info below ***</h2>
+      <h2 
+        id="parking-directive"
+        onClick={scrollToParking}
+      >
+        *** See parking info below ***
+      </h2>
 
       <h1 className="header">Candie's Swingin' 70th Birthday</h1>
 
@@ -24,14 +42,21 @@ const Directions = props => {
         Dress in your best 40s inspired outfits and come ready to dance the night away.
       </p>
 
-      <button>RSVP</button>
+      <button>
+        RSVP
+      </button>
 
-      <img src={LittleCandie} alt="A pre-trauma Candie"/>
+      <img id="little-candie" src={LittleCandie} alt="A pre-trauma Candie"/>
 
       <h2>Time &amp; Location</h2>
       <p>Saturday, October 2, 2021 @ 5pm PDT</p>
       <p>Jones House - 123 Fake Street, Unreal, CA 90210, USA</p>
-      <h2 id="parking-directive">*** See parking info below ***</h2>
+      <h2 
+        id="parking-directive"
+        onClick={scrollToParking}
+      >
+        *** See parking info below ***
+      </h2>
 
       <h2>About the Event</h2>
       <p>
@@ -42,7 +67,14 @@ const Directions = props => {
         <em>Adults only, please.</em>
       </p>
 
-      <h2 className="parking-info-header">Parking Info</h2>
+      <h2
+        className="parking-info-header" 
+        ref={parkingInfo}
+      >
+        <img src={Warning} alt="warning icon"/>
+        <div>Parking Info</div>
+        <img src={Warning} alt="warning icon"/>
+      </h2>
 
       <p>
         There is no parking on our cul-de-sac, 
