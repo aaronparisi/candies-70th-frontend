@@ -19,21 +19,21 @@ function App() {
   return (
     <React.Fragment >
       <NavBarContainer key={window.location.pathname} loc={window.location.pathname} />
-      <Route exact path="/:user?/(inspo|parking)?/rsvp" component={RSVPFormContainer} />
-      <Route exact path="/:user?/([r][s][v][p])?" component={MainVideo} />
+      <Route exact path="/:user/(inspo|parking)?/rsvp" component={RSVPFormContainer} />
+      <Route exact path="/:user/([r][s][v][p])?" component={MainVideo} />
       {/* <ParallaxLayer 
         offset={0}
         speed={0.5}
       >
         <Balloons />
       </ParallaxLayer> */}
-      <Route exact path="/:user?/([r][s][v][p])?" component={InfoSection} />
-      <Route exact path="/:user?/([r][s][v][p])?" component={HowToSection} />
+      <Route exact path="/:user/([r][s][v][p])?" component={InfoSection} />
+      <Route exact path="/:user/([r][s][v][p])?" component={HowToSection} />
       
-      <Route exact path="/:user?/inspo/([r][s][v][p])?" component={InspoContainer} />
-      <Route exact path="/:user?/directions/([r][s][v][p])?" component={Directions} />
+      <Route exact path="/:user/inspo/([r][s][v][p])?" component={InspoContainer} />
+      <Route exact path="/:user/directions/([r][s][v][p])?" component={Directions} />
 
-      <Route path="/:user?/([r][s][v][p])?" component={QuestionForm} />
+      <Route path="/:user/([r][s][v][p])?" component={QuestionForm} />
     </React.Fragment>
     
   );

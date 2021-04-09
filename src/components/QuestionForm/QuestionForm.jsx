@@ -9,12 +9,8 @@ const QuestionForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    alert("Your question has been ~pretend~ submitted!  We won't ever get back to you.")
-    let newUrl = window.location.pathname.split('/')
-    newUrl.pop();
-
-    history.push(newUrl.join('/'))
-    // ! this should be abstracted somehow
+    alert("I'm working on the back end for this - check back later for fully functioning form submission and inbox party updates!!")
+    history.push(window.location.pathname)
   }
 
   return (
