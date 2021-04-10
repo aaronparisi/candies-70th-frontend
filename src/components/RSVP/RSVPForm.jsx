@@ -24,7 +24,9 @@ const RSVPForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log('rsvp submission')
+    alert('rsvp submission')
+
+    handleFormClose(e)
   }
 
   return (

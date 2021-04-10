@@ -4,7 +4,7 @@ import { debounce } from '../../utils/helpers';
 
 const inFrontOfDark = () => {
   const ele = document.elementFromPoint(0,75)
-  console.log(ele)
+  
   if (ele.dataset.dark === undefined) {
     return true
   } else {
@@ -32,8 +32,9 @@ const NavBar = props => {
   }
 
   useEffect(() => {
+    console.log('inside the non-scroll useEffect')
     return () => setDarkNav(inFrontOfDark())
-  })
+  }, [window.location.pathname])
   
   useEffect(() => {
     let isScrolling;
@@ -57,10 +58,12 @@ const NavBar = props => {
       if (prevScrollPos < curScrollPos) {
         // scrolling down => nav will hide => wait before adjusting background
         setTimeout(() => {
+          console.log('waited 2 fucking seconds')
           setDarkNav(inFrontOfDark())
-        }, 1000);
+        }, 2000);
       } else {
         // scrolling up => nav will show => set dark nav right away
+        console.log('did not wait at all')
         setDarkNav(inFrontOfDark())
       }
   
