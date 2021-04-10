@@ -18,13 +18,12 @@ function App() {
   
   return (
     <React.Fragment >
-      <NavBarContainer key={window.location.pathname} loc={window.location.pathname} />
       <Route exact path="/:user/(inspo|parking)?/rsvp" component={RSVPFormContainer} />
       <Route exact path="/:user/([r][s][v][p])?" component={MainVideo} />
       {/* <ParallaxLayer 
         offset={0}
         speed={0.5}
-      >
+        >
         <Balloons />
       </ParallaxLayer> */}
       <Route exact path="/:user/([r][s][v][p])?" component={InfoSection} />
@@ -34,6 +33,10 @@ function App() {
       <Route exact path="/:user/directions/([r][s][v][p])?" component={Directions} />
 
       <Route path="/:user/([r][s][v][p])?" component={QuestionForm} />
+      <NavBarContainer loc={window.location.pathname} />
+      {/* i want the nav bar to render AFTER everything else so it can 
+          base its color on the entirety of the page's content 
+      */}
     </React.Fragment>
     
   );

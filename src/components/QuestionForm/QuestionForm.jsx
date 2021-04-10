@@ -10,13 +10,13 @@ const QuestionForm = () => {
   const handleSubmit = e => {
     e.preventDefault()
     alert("I'm working on the back end for this - check back later for fully functioning form submission and inbox party updates!!")
-    history.push(window.location.pathname)
+    history.push(window.location.pathname) 
   }
 
   return (
     <div 
       className="question-form"
-      data-dark={false}
+      data-dark={true}
     >
       <h2>For any questions, please contact Candie @ 123-555-1234</h2>
       <h2>Or, send her a message!</h2>

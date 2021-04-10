@@ -4,9 +4,9 @@ import { debounce } from '../../utils/helpers';
 
 const inFrontOfDark = () => {
   const ele = document.elementFromPoint(0,75)
-  
+  console.log(ele)
   if (ele.dataset.dark === undefined) {
-    return false
+    return true
   } else {
     return ele.dataset.dark === "true"
   }
@@ -32,9 +32,9 @@ const NavBar = props => {
   }
 
   useEffect(() => {
-    setDarkNav(inFrontOfDark())
-  }, [])
-
+    return () => setDarkNav(inFrontOfDark())
+  })
+  
   useEffect(() => {
     let isScrolling;
 
@@ -116,6 +116,5 @@ const NavBar = props => {
 export default withRouter(NavBar)
 
 // todos
-// - color change is jumpy
 // - maybe take the nav bar out of the container?
 // - do paralax
