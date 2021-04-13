@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import NavBar from './NavBar'
 
 const mapStateToProps = (state, ownProps) => {
+
   return {
     path: ownProps.loc
   }
