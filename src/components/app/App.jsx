@@ -18,21 +18,21 @@ function App() {
 
   return (
     <React.Fragment >
-      <Route exact path="/:user/(inspo|parking|directions)?/rsvp" component={RSVPFormContainer} />
-      <Route exact path="/:user/([r][s][v][p])?" component={MainVideo} />
+      <Route exact path="/(inspo|parking|directions)?/rsvp" component={RSVPFormContainer} />
+      <Route exact path="/([r][s][v][p])?" component={MainVideo} />
       {/* <ParallaxLayer 
         offset={0}
         speed={0.5}
         >
         <Balloons />
       </ParallaxLayer> */}
-      <Route exact path="/:user/([r][s][v][p])?" component={InfoSection} />
-      <Route exact path="/:user/([r][s][v][p])?" component={HowToSection} />
+      <Route exact path="/([r][s][v][p])?" component={InfoSection} />
+      <Route exact path="/([r][s][v][p])?" component={HowToSection} />
       
-      <Route exact path="/:user/inspo/([r][s][v][p])?" component={InspoContainer} />
-      <Route exact path="/:user/directions/([r][s][v][p])?" component={Directions} />
+      <Route exact path="/inspo/([r][s][v][p])?" component={InspoContainer} />
+      <Route exact path="/directions/([r][s][v][p])?" component={Directions} />
 
-      <Route path="/:user/([r][s][v][p])?" component={QuestionForm} />
+      <Route path="/([r][s][v][p])?" component={QuestionForm} />
       <NavBarContainer />
     </React.Fragment>
     

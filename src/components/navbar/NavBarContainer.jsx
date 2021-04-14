@@ -4,7 +4,8 @@ import NavBar from './NavBar'
 const mapStateToProps = (state, ownProps) => {
 
   return {
-    path: ownProps.loc
+    path: ownProps.loc,
+    user: state.session.currentUser
   }
 }
 

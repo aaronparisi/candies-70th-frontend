@@ -1,0 +1,3 @@
+- remove user id requirement from urls
+- remove nav bar from container?
+- 

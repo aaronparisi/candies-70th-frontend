@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { debounce } from '../../utils/helpers';
+import SessionLinks from './SessionLinks';
 
 const inFrontOfDark = () => {
   const ele = document.elementFromPoint(0,75)
@@ -86,29 +87,31 @@ const NavBar = props => {
       >
         <div 
           className="nav-link-container"
-          id={ new RegExp(/(\d+)$/).test(props.location.pathname) ? "selected-nav-link" : ""}
+          id={ new RegExp(/\//).test(props.location.pathname) ? "selected-nav-link" : ""}
         >
-          <Link className="nav-link" to={`/${curUser}`} >HOME</Link>
+          <Link className="nav-link" to={`/`} >HOME</Link>
         </div>
         <div 
           className="nav-link-container"
-          id={ new RegExp(/(\d+)\/inspo/).test(props.location.pathname) ? "selected-nav-link" : ""}
+          id={ new RegExp(/inspo/).test(props.location.pathname) ? "selected-nav-link" : ""}
         >
-          <Link className="nav-link" to={`/${curUser}/inspo`} >HAIR &amp; OUTFIT INSPO</Link>
+          <Link className="nav-link" to={`/inspo`} >HAIR &amp; OUTFIT INSPO</Link>
         </div>
         <div 
           className="nav-link-container"
-          id={ new RegExp(/(\d+)\/directions/).test(props.location.pathname) ? "selected-nav-link" : ""}
+          id={ new RegExp(/directions/).test(props.location.pathname) ? "selected-nav-link" : ""}
         >
-          <Link className="nav-link" to={`/${curUser}/directions`} >DIRECTIONS</Link>
+          <Link className="nav-link" to={`/directions`} >DIRECTIONS</Link>
         </div>
         <div 
           className="nav-link-container"
-          id={ new RegExp("/(\d+)/(inspo|directions)?/rsvp/").test(props.location.pathname) ? "selected-nav-link" : ""}
+          id={ new RegExp("/(inspo|directions)?/rsvp/").test(props.location.pathname) ? "selected-nav-link" : ""}
         >
           <Link className="nav-link" to={`${props.location.pathname}/rsvp`} >RSVP</Link>
         </div>
       </div>
+
+      <SessionLinks user={props.user} pathname={props.location.pathname} />
     </div>
   )
 }

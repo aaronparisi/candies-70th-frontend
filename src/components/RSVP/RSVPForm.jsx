@@ -25,6 +25,7 @@ const RSVPForm = props => {
   const handleSubmit = e => {
     e.preventDefault()
     alert('rsvp submission')
+    // todo save user info in store in case they want to modify their rsvp?
 
     handleFormClose(e)
   }
