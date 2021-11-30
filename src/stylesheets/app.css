@@ -417,6 +417,88 @@ button, input {
     .directions .parking-info-header img {
       margin: 0px 10px; }
 
+.portal {
+  padding-top: 75px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .portal .header {
+    font-size: 48px; }
+
+.login-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .login-content .login-overlay {
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px; }
+  .login-content .close-login-button {
+    background-color: #ffffff;
+    border: 1px solid #cba841;
+    border-radius: 12px;
+    padding: 4px 7px;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    z-index: 4; }
+    .login-content .close-login-button:hover {
+      cursor: pointer;
+      background-color: #E8E6E6; }
+  .login-content .login-form-height-wrapper {
+    position: fixed;
+    top: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 4; }
+    .login-content .login-form-height-wrapper .login-form {
+      margin-top: 10px;
+      width: 50%;
+      border: 1px solid #cba841;
+      box-shadow: 0px 0px 100px #cba841;
+      background-color: #ffffff; }
+      .login-content .login-form-height-wrapper .login-form form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Dosis', sans-serif;
+        font-size: 24px;
+        padding: 20px 40px; }
+        .login-content .login-form-height-wrapper .login-form form input, .login-content .login-form-height-wrapper .login-form form label {
+          color: #999997;
+          font-family: 'Dosis', sans-serif;
+          padding: 5px 5px;
+          font-size: 24px; }
+        .login-content .login-form-height-wrapper .login-form form input[type="text"] {
+          border-bottom: 1px solid #999997;
+          padding: 10px 10px;
+          width: 45%; }
+          .login-content .login-form-height-wrapper .login-form form input[type="text"]:first-child {
+            margin-right: 10px; }
+        .login-content .login-form-height-wrapper .login-form form input[type="submit"] {
+          background-color: #F2C38F;
+          border: none;
+          box-shadow: none;
+          font-family: 'Dosis', sans-serif;
+          font-size: 24px;
+          padding: 10px 50px;
+          margin-top: 20px;
+          width: 50%; }
+          .login-content .login-form-height-wrapper .login-form form input[type="submit"]:hover {
+            cursor: pointer;
+            background-color: #e9ac67; }
+
 body {
   position: relative;
   color: #ffffff; }

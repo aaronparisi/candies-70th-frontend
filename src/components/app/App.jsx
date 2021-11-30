@@ -12,13 +12,16 @@ import RSVPFormContainer from '../RSVP/RSVPFormContainer'
 // import Balloons from '../Balloons/Balloons';
 import InspoContainer from '../Inspo/InspoContainer';
 import Directions from '../Directions/Directions';
+import PortalContainer from '../Portal/PortalContainer'
+import LoginContainer from '../Login/LoginContainer';
 // import { AuthRoute, ManagerBoolRoute, ProtectedRoute, ThisLoggedInBoolRoute } from '../../utils/route_util'
 
 function App() {
 
   return (
     <React.Fragment >
-      <Route exact path="/(inspo|parking|directions)?/rsvp" component={RSVPFormContainer} />
+      <Route exact path="/(inspo|parking|directions|portal)?/rsvp" component={RSVPFormContainer} />
+      <Route exact path="/login" component={LoginContainer} />
       <Route exact path="/([r][s][v][p])?" component={MainVideo} />
       {/* <ParallaxLayer 
         offset={0}
@@ -31,6 +34,7 @@ function App() {
       
       <Route exact path="/inspo/([r][s][v][p])?" component={InspoContainer} />
       <Route exact path="/directions/([r][s][v][p])?" component={Directions} />
+      <Route exact path="/portal/([r][s][v][p])?" component={PortalContainer} />
 
       <Route path="/([r][s][v][p])?" component={QuestionForm} />
       <NavBarContainer />

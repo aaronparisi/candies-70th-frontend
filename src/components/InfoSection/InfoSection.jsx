@@ -11,7 +11,7 @@ const InfoSection = props => {
 
       <div className="logistics">
         <div className="info-container" id="when-container">
-          <h2 className="info-header">Where</h2>
+          <h2 className="info-header">When</h2>
           <div className="info-content" id="when-content">
             <p>October 2, 2021</p>
             <p>5pm PDT</p>
@@ -19,7 +19,7 @@ const InfoSection = props => {
         </div>
 
         <div className="info-container" id="where-container">
-          <h2 className="info-header">When</h2>
+          <h2 className="info-header">Where</h2>
           <div className="info-content" id="where-content">
             <p>Candie's House (see parking info below!)</p>
             <p>123 Fake Street, Unreal, CA 90210, USA</p>

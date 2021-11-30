@@ -18,20 +18,6 @@ const NavBar = props => {
   const [darkNav, setDarkNav] = useState(inFrontOfDark())
   const [visible, setVisible] = useState(true);
 
-  const navBarStyles = {
-    position: 'fixed',
-    left: '0px',
-    height: '75px',
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    zIndex: '2',
-    transition: 'top 0.3s',
-    top: visible ? '0px' : '-100px',
-    backgroundColor: darkNav ? 'black' : 'transparent',
-    boxShadow: darkNav ? '0px 1px 10px #CBA841' : 'none'
-  }
-
   useEffect(() => {
     return () => setDarkNav(inFrontOfDark())
   }, [props])
@@ -55,15 +41,17 @@ const NavBar = props => {
         curScrollPos < 10
       )
 
-      if (prevScrollPos < curScrollPos) {
-        // scrolling down => nav will hide => wait before adjusting background
-        setTimeout(() => {
-          setDarkNav(inFrontOfDark())
-        }, 2000);
-      } else {
-        // scrolling up => nav will show => set dark nav right away
-        setDarkNav(inFrontOfDark())
-      }
+      setDarkNav(inFrontOfDark())
+
+      // if (prevScrollPos < curScrollPos) {
+      //   // scrolling down => nav will hide => wait before adjusting background
+      //   setTimeout(() => {
+      //     setDarkNav(inFrontOfDark())
+      //   }, 2000);
+      // } else {
+      //   // scrolling up => nav will show => set dark nav right away
+      //   setDarkNav(inFrontOfDark())
+      // }
   
       setPrevScrollPos(curScrollPos)
     }
@@ -72,9 +60,21 @@ const NavBar = props => {
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [prevScrollPos, visible])
-
-  const curUser = props.location.pathname.split('/')[1]
   
+  const navBarStyles = {
+    position: 'fixed',
+    left: '0px',
+    height: '75px',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    zIndex: '2',
+    transition: 'top 0.3s, background-color 0.3s, box-shadow 0.3s',
+    top: visible ? '0px' : '-100px',
+    backgroundColor: darkNav ? 'black' : 'transparent',
+    boxShadow: darkNav ? '0px 1px 10px #CBA841' : 'none'
+  }
+
   return (
     <div 
       className="nav-bar-container"
@@ -87,7 +87,7 @@ const NavBar = props => {
       >
         <div 
           className="nav-link-container"
-          id={ new RegExp(/\//).test(props.location.pathname) ? "selected-nav-link" : ""}
+          id={ new RegExp(/\/$/).test(props.location.pathname) ? "selected-nav-link" : ""}
         >
           <Link className="nav-link" to={`/`} >HOME</Link>
         </div>
@@ -97,21 +97,10 @@ const NavBar = props => {
         >
           <Link className="nav-link" to={`/inspo`} >HAIR &amp; OUTFIT INSPO</Link>
         </div>
-        <div 
-          className="nav-link-container"
-          id={ new RegExp(/directions/).test(props.location.pathname) ? "selected-nav-link" : ""}
-        >
-          <Link className="nav-link" to={`/directions`} >DIRECTIONS</Link>
-        </div>
-        <div 
-          className="nav-link-container"
-          id={ new RegExp("/(inspo|directions)?/rsvp/").test(props.location.pathname) ? "selected-nav-link" : ""}
-        >
-          <Link className="nav-link" to={`${props.location.pathname}/rsvp`} >RSVP</Link>
-        </div>
+
+        <SessionLinks user={props.user} pathname={props.location.pathname} logoutCurrentUser={props.logoutCurrentUser} />
       </div>
 
-      <SessionLinks user={props.user} pathname={props.location.pathname} />
     </div>
   )
 }
